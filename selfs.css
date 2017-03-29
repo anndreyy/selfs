@@ -1,0 +1,67 @@
+body{
+	background: #009688;
+}
+
+.self_select{
+	width: 500px;
+	margin: auto;
+	/* background: #3F51B5; */
+	/* padding: 7px; */
+	position: relative;
+	display: block;
+}
+
+.self_select > .search {
+	height: 36px;
+	width: 100%;
+	/* border: 0; */
+	margin: auto;
+	padding-left: 14px;
+	display: block;
+	border: 1px solid gray;
+	box-sizing: border-box;
+	border-radius: 1px;
+}
+
+.self_select > .search.selected {
+	background: #3F51B5;
+	color: white;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.self_select > .box_result {
+    min-height: 32px;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    position: absolute;
+    left: 0;
+    top: 40px;
+    display: none;
+    /* padding: 13px; */
+    box-sizing: border-box;
+    max-height: 300px;
+    overflow: auto;
+}
+
+.self_select > .box_result > .item{
+	padding: 7px 20px 7px 20px;
+}
+
+.self_select > .box_result > .item.selected{
+	background: gray;
+	color: white;
+}
+
+.self_select > .box_result > .no_result{
+	padding: 7px 20px 7px 20px;
+	color: gray;
+}
+
+.self_select > .box_result > .item:hover{
+	background: gray;
+	color: white;
+	font-weight: 100;
+	cursor: pointer;
+}
