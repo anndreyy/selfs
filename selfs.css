@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 body{
-	background: #009688;
+	background: #8BC34A;
+	font-family: 'Raleway', sans-serif;
 }
 
+
 .self_select{
-	width: 500px;
+	width: 30%;
 	margin: auto;
 	/* background: #3F51B5; */
 	/* padding: 7px; */
@@ -12,6 +16,7 @@ body{
 }
 
 .self_select > .search {
+	transition: background 0.5s ease, box-shadow 0.5s ease;
 	height: 36px;
 	width: 100%;
 	/* border: 0; */
@@ -21,13 +26,17 @@ body{
 	border: 1px solid gray;
 	box-sizing: border-box;
 	border-radius: 1px;
+	font-family: 'Raleway', sans-serif;
 }
 
 .self_select > .search.selected {
-	background: #3F51B5;
+	background: #5C6BC0;
 	color: white;
 	font-weight: bold;
 	font-size: 15px;
+	border: 0;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+	/* transition: background 0.5s ease; */
 }
 
 .self_select > .box_result {
@@ -43,10 +52,52 @@ body{
     box-sizing: border-box;
     max-height: 300px;
     overflow: auto;
+    color: #7d7d7d;
 }
 
 .self_select > .box_result > .item{
-	padding: 7px 20px 7px 20px;
+	padding: 7px 20px 7px 34px;
+	position: relative;
+}
+
+.self_select > .box_result > .divider{
+	background: #9E9E9E;
+	width: 84%;
+	height: 1px;
+	margin: auto;
+	/* border-radius: 92px; */
+}
+
+.self_select > .box_result > .item > .glyphicon{
+	display: block;
+	font-size: 13px;
+	position: absolute;
+	left: 9px;
+	top: 50%;
+	margin-top: -8.5px;
+	color: #ffffff;
+	opacity: 0;
+	transition: all 0.5s;
+}
+
+.self_select > .box_result > .item:hover > .glyphicon,
+.self_select > .box_result > .item.selected > .glyphicon
+{
+	opacity: 1;
+}
+
+.self_select > .box_result > .item > .glyphicon:hover
+{
+	color: #f3cd00;
+	opacity: 1;
+	/* font-size: 16px; */
+}
+
+.self_select > .box_result > .item > .glyphicon.active
+{
+	color: gold;
+	opacity: 1;
+	font-size: 16px;
 }
 
 .self_select > .box_result > .item.selected{
@@ -55,13 +106,13 @@ body{
 }
 
 .self_select > .box_result > .no_result{
-	padding: 7px 20px 7px 20px;
+	padding: 7px 20px 7px 34px;
 	color: gray;
 }
 
 .self_select > .box_result > .item:hover{
-	background: gray;
-	color: white;
+	background: #C5CAE9;
+	/* color: white; */
 	font-weight: 100;
 	cursor: pointer;
 }
